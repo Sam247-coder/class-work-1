@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+    char title[50], author[50], publisher[50];
+    int isbn, year;
+    float price;
+    printf("Enter Book Title, Author Name, ISBN, Price, Publisher, Year: ");
+    scanf("%s %s %d %f %s %d", title, author, &isbn, &price, publisher, &year);
+    printf("\nBook Details:\n");
+    printf("Title: %s\nAuthor: %s\nISBN: %d\nPrice: %.2f\nPublisher: %s\nYear: %d", title, author, isbn, price, publisher, year);
+    return 0;
+}
