@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+    char name[50], manufacturer[50], category[50];
+    int id, quantity;
+    float price;
+    printf("Enter Product Name, ID, Quantity, Price, Manufacturer, Category: ");
+    scanf("%s %d %d %f %s %s", name, &id, &quantity, &price, manufacturer, category);
+    printf("\nProduct Details:\n");
+    printf("Name: %s\nID: %d\nQuantity: %d\nPrice: %.2f\nManufacturer: %s\nCategory: %s", name, id, quantity, price, manufacturer, category);
+    return 0;
+}
