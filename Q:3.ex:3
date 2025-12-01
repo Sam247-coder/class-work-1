@@ -1,0 +1,42 @@
+/*3.	Employee Data Entry and Display
+➤ Create a program that allows entry and display of employee details (name, ID, department, salary) using functions */
+#include <stdio.h>
+
+struct Employee {
+    char name[50];
+    int id;
+    char department[50];
+    float salary;
+};
+
+void inputEmployee(struct Employee *e) {
+    printf("Enter Employee Name: ");
+    scanf("%s", e->name);
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e->id);
+
+    printf("Enter Department: ");
+    scanf("%s", e->department);
+
+    printf("Enter Salary: ");
+    scanf("%f", &e->salary);
+}
+
+void displayEmployee(struct Employee e) {
+    printf("\n--- Employee Details ---\n");
+    printf("Name: %s\n", e.name);
+    printf("ID: %d\n", e.id);
+    printf("Department: %s\n", e.department);
+    printf("Salary: %.2f\n", e.salary);
+}
+
+int main() {
+    struct Employee emp;
+
+    inputEmployee(&emp);
+    displayEmployee(emp);
+
+    return 0;
+}
+
