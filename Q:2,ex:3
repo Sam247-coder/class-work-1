@@ -1,0 +1,28 @@
+/*2.	Display Student Information
+➤ Write a program using a function to display a student’s name, roll number, and marks.*/
+#include <stdio.h>
+
+void displayStudent(char name[], int roll, float marks) {
+    printf("Student Name: %s\n", name);
+    printf("Roll Number: %d\n", roll);
+    printf("Marks: %.2f\n", marks);
+}
+
+int main() {
+    char name[50];
+    int roll;
+    float marks;
+
+    printf("Enter Name: ");
+    scanf("%s", name);
+
+    printf("Enter Roll Number: ");
+    scanf("%d", &roll);
+
+    printf("Enter Marks: ");
+    scanf("%f", &marks);
+
+    displayStudent(name, roll, marks);
+
+    return 0;
+}
