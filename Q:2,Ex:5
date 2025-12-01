@@ -1,0 +1,26 @@
+/*2.	Local Variable Access
+➤ Declare a local variable inside a function and attempt to access it outside the function.
+➤ Compare this behavior with that of the global variable.
+*/
+#include <stdio.h>
+
+int globalVar = 20;
+
+void testLocal() {
+    int localVar = 5;
+    printf("Inside testLocal(): localVar = %d\n", localVar);
+}
+
+void accessLocal() {
+    printf("Inside accessLocal(): Cannot access localVar here.\n");
+}
+
+int main() {
+    printf("Inside main(): globalVar = %d\n", globalVar);
+
+    testLocal();
+    accessLocal();
+
+    return 0;
+}
+
