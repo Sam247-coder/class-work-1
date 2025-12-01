@@ -1,0 +1,36 @@
+/*4.	Calculate Monthly Salary of an Employee
+➤ Write a function that calculates monthly salary including:
+o	HRA (15% for metro cities, 10% for non-metro)
+o	DA (5%)
+➤ Take basic salary as input.*/
+#include <stdio.h>
+
+float calculateSalary(float basic, int isMetro) {
+    float hra, da;
+
+    if (isMetro == 1)
+        hra = 0.15f * basic;
+    else
+        hra = 0.10f * basic;
+
+    da = 0.05f * basic;
+
+    return basic + hra + da;
+}
+
+int main() {
+    float basic;
+    int isMetro;
+
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+
+    printf("Is the city metro? (1 = Yes, 0 = No): ");
+    scanf("%d", &isMetro);
+
+    float totalSalary = calculateSalary(basic, isMetro);
+
+    printf("Monthly Salary = %.2f\n", totalSalary);
+
+    return 0;
+}
