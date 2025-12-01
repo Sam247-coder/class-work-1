@@ -1,0 +1,26 @@
+/*1.	Global Variable Access
+➤ Declare a global variable outside all functions and use it inside various functions to understand its accessibility.
+*/
+#include <stdio.h>
+
+int globalVar = 10;
+
+void display() {
+    printf("Inside display(), globalVar = %d\n", globalVar);
+}
+
+void update() {
+    globalVar += 5;
+    printf("Inside update(), globalVar = %d\n", globalVar);
+}
+
+int main() {
+    printf("Inside main(), globalVar = %d\n", globalVar);
+
+    display();
+    update();
+
+    printf("After update(), inside main(), globalVar = %d\n", globalVar);
+
+    return 0;
+}
