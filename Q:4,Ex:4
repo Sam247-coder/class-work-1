@@ -1,0 +1,64 @@
+/*4.	Matrix Multiplication
+➤ Read two matrices A (m×n) and B (p×q) and compute their product A × B.
+➤ Display both input matrices and the resultant matrix in proper matrix format.
+➤ Check for compatibility before performing multiplication and display an appropriate message if incompatible.
+*/
+#include <stdio.h>
+
+int main() {
+    int m, n, p, q;
+    int i, j, k;
+
+    printf("Enter rows and columns of Matrix A (m n): ");
+    scanf("%d %d", &m, &n);
+
+    printf("Enter rows and columns of Matrix B (p q): ");
+    scanf("%d %d", &p, &q);
+
+    if(n != p) {
+        printf("Matrix multiplication not possible. Columns of A must equal rows of B.\n");
+        return 0;
+    }
+
+    int A[m][n], B[p][q], C[m][q];
+
+    printf("Enter elements of Matrix A:\n");
+    for(i = 0; i < m; i++)
+        for(j = 0; j < n; j++)
+            scanf("%d", &A[i][j]);
+
+    printf("Enter elements of Matrix B:\n");
+    for(i = 0; i < p; i++)
+        for(j = 0; j < q; j++)
+            scanf("%d", &B[i][j]);
+
+    for(i = 0; i < m; i++)
+        for(j = 0; j < q; j++) {
+            C[i][j] = 0;
+            for(k = 0; k < n; k++)
+                C[i][j] += A[i][k] * B[k][j];
+        }
+
+    printf("\nMatrix A:\n");
+    for(i = 0; i < m; i++) {
+        for(j = 0; j < n; j++)
+            printf("%d ", A[i][j]);
+        printf("\n");
+    }
+
+    printf("\nMatrix B:\n");
+    for(i = 0; i < p; i++) {
+        for(j = 0; j < q; j++)
+            printf("%d ", B[i][j]);
+        printf("\n");
+    }
+
+    printf("\nProduct Matrix (A × B):\n");
+    for(i = 0; i < m; i++) {
+        for(j = 0; j < q; j++)
+            printf("%d ", C[i][j]);
+        printf("\n");
+    }
+
+    return 0;
+}
